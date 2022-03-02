@@ -1,0 +1,79 @@
+@import "responsive";
+
+
+.navbar {
+  flex-basis: 20%;
+  min-height: 100vh;
+  border-right: 3px solid rgba(202, 202, 202, 0.5);
+  transition: transform .3s linear;
+
+  &_toggle {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    background-color: #f8f8f8;
+    z-index: 99;
+    width: 50%;
+  }
+
+  @include md() {
+    display: none;
+  }
+
+  &_states {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: calc(100% - 130px);
+    color: #8d8d8d;
+
+    &_menu, &_options {
+      width: 101%;
+
+      li {
+        position: relative;
+        padding: 10px 0;
+        font-size: 1.2rem;
+        display: flex;
+        width: 100%;
+
+        .notification {
+          position: absolute;
+          display: inline-block;
+          min-width: 26px;
+          height: 26px;
+          border-radius: 8px;
+          font-size: .9rem;
+          background-color: #fba61a;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #f8f8f8;
+          right: 15px;
+          top: 12px;
+        }
+
+        &:hover svg, &:hover a {
+          color: #3b3b3b;
+          stroke: #3b3b3b;
+        }
+
+        svg {
+          vertical-align: center;
+
+        }
+
+        a {
+          width: 100%;
+          color: #8d8d8d;
+          padding: 0 10px;
+
+          &:hover {
+            border-right: 3px solid #3686e9;
+          }
+        }
+      }
+    }
+  }
+}

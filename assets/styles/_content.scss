@@ -1,0 +1,204 @@
+@import "responsive";
+
+.content {
+  width: 100%;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+
+    &_search {
+      width: 50%;
+      color: #8d8d8d;
+      text-align: center;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      @include sm() {
+        flex-basis: 80%;
+        width: 100%;
+        margin-left: 35px;
+      }
+
+      button {
+        border: none;
+        cursor: pointer;
+        padding: 6px 5px;
+        background-color: rgba(141, 141, 141, 0.09);
+        border-radius: 8px 0 0 8px;
+      }
+
+      span {
+        padding: 5.5px;
+        background-color: rgba(141, 141, 141, 0.09);
+
+      }
+
+      input[type='search'] {
+        font-family: "Vazir-medium";
+        outline: none;
+        padding: 0 10px;
+        width: 80%;
+        height: 36px;
+        border: none;
+        background-color: rgba(222, 226, 226, 0.43);
+        border-radius: 0 8px 8px 0;
+        @include sm() {
+          width: 100%;
+        }
+      }
+    }
+
+    &_info {
+      width: 50%;
+      display: flex;
+      justify-content: end;
+
+      align-items: center;
+      @include sm() {
+        width: 30%;
+        justify-content: center;
+        span {
+          display: none;
+        }
+        svg {
+          display: none;
+        }
+      }
+
+      > * {
+        margin: 0 5px;
+      }
+
+      figure {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+
+  }
+
+  &_body {
+    &_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &_date {
+        display: flex;
+        align-items: center;
+        background-color: rgba(141, 141, 141, 0.09);
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+
+    &_tasks {
+      display: flex;
+      justify-content: space-between;
+      @include sm() {
+        flex-direction: column;
+        align-items: center;
+
+      }
+
+      &_todos {
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        @include sm() {
+          width: 80%;
+          margin:40px auto;
+        }
+        overflow-y: scroll;
+        width: 32%;
+        background-color: rgba(180, 247, 234, 0.23);
+        height: 570px;
+        padding: 10px 15px;
+        border-radius: 8px;
+
+        &_title {
+          font-family: 'Vazir-medium';
+          display: flex;
+          justify-content: space-between;
+
+          span:last-child {
+            font-size: .8rem;
+            border-radius: 5px;
+            display: block;
+            padding: 4px 9px;
+            color: rgb(15, 142, 118);
+            background-color: rgba(180, 247, 234, 0.63);
+          }
+        }
+
+        &_plus {
+          text-align: center;
+          background-color: rgba(180, 247, 234, 0.43);
+          padding: 8px 0;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(180, 247, 234);
+          }
+        }
+
+        &_card {
+          min-width: 100%;
+          min-height: 200px;
+          background-color: #f8f8f8;
+          border-radius: 10px;
+
+          &_header {
+            font-family: Vazir-medium;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #efefef;
+
+            span {
+              display: flex;
+              align-items: center;
+            }
+
+          }
+
+          p {
+            font-size: .9rem;
+            color: #6d6d6d;
+          }
+
+          &_footer {
+            border-top: 1px solid #efefef;
+
+            :not(:first-child) {
+              transform: translateX(-40%);
+            }
+
+            span {
+              color: #f8f8f8;
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+              padding: 4px;
+              border-radius: 50%;
+
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

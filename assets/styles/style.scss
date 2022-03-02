@@ -1,0 +1,48 @@
+@import "fonts";
+@import "padding";
+@import "margin";
+@import "colors";
+@import "navbar";
+@import "content";
+@import "responsive";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #f8f8f8;
+  font-family: 'Vazir', 'Roboto Light';
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.Wrapper {
+  display: flex;
+
+}
+
+.hamburger {
+  position: absolute;
+  top: 20px;
+  margin-right: 5px;
+  display: none;
+  @include md() {
+    display: block;
+  }
+
+}
